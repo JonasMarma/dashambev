@@ -40,77 +40,79 @@ export const Parametrizacao = () => {
             />
           </Row>
         </Col>
-        <Col md={3}>
-          <p style={{ margin: "0", fontWeight: "bold" }}>Faixa de atraso</p>
-          <div className="d-flex justify-content-between">
-            <div>
-              <p style={{ margin: "0" }}>Data Início</p>
-              <Form.Control type="date" name="date-begin" className="mr-1" />
+        <Col md={11} className="d-flex justify-content-between">
+          <Col style={{ marginRight: "10px" }}>
+            <p style={{ margin: "0", fontWeight: "bold" }}>Faixa de atraso</p>
+            <div className="d-flex justify-content-between">
+              <div style={{ marginRight: "10px" }}>
+                <p style={{ margin: "0" }}>Data Início</p>
+                <Form.Control type="date" name="date-begin" className="mr-1" />
+              </div>
+              <div>
+                <p style={{ margin: "0" }}>Data Final</p>
+                <Form.Control type="date" name="date-end" />
+              </div>
             </div>
-            <div>
-              <p style={{ margin: "0" }}>Data Final</p>
-              <Form.Control type="date" name="date-end" />
-            </div>
-          </div>
-        </Col>
-        <Col
-          md={2}
-          style={{
-            alignSelf: "self-end",
-          }}
-        >
-          <p style={{ margin: "0", fontWeight: "bold" }}>Produto</p>
-          <div
+          </Col>
+          <Col
             style={{
               alignSelf: "self-end",
+              marginRight: "10px",
             }}
           >
-            <Select options={productList} />
-          </div>
-        </Col>
-        <Col
-          md={2}
-          style={{
-            alignSelf: "self-end",
-          }}
-        >
-          <p style={{ margin: "0", fontWeight: "bold" }}>
-            Data de Direcionamento
-          </p>
+            <p style={{ margin: "0", fontWeight: "bold" }}>Produto</p>
+            <div>
+              <Select options={productList} />
+            </div>
+          </Col>
 
-          <div>
-            <Form.Control type="date" name="date-direc" className="mr-1" />
-          </div>
-        </Col>
-        <Col
-          md={1}
-          style={{
-            alignSelf: "self-end",
-          }}
-        >
-          <p style={{ margin: "0", fontWeight: "bold" }}>UF</p>
-          <div
+          <Col
+            style={{
+              alignSelf: "self-end",
+              marginRight: "10px",
+            }}
+          >
+            <span style={{ margin: "0", fontWeight: "bold" }}>
+              Data de Direcionamento
+            </span>
+
+            <div>
+              <Form.Control type="date" name="date-direc" className="mr-1" />
+            </div>
+          </Col>
+          <Col
+            style={{
+              alignSelf: "self-end",
+              marginRight: "30px",
+            }}
+          >
+            <p style={{ margin: "0", fontWeight: "bold" }}>UF</p>
+            <div
+              style={{
+                alignSelf: "self-end",
+              }}
+            >
+              <Select options={ufList} />
+            </div>
+          </Col>
+          <Col
+            md={1}
             style={{
               alignSelf: "self-end",
             }}
           >
-            <Select options={ufList} />
-          </div>
+            <div
+              style={{
+                alignSelf: "self-end",
+              }}
+            >
+              <Button> Buscar </Button>
+            </div>
+          </Col>
         </Col>
-        <Col
-          md={2}
-          style={{
-            alignSelf: "self-end",
-          }}
-        >
-          <div
-            style={{
-              alignSelf: "self-end",
-            }}
-          >
-            <Button> Buscar </Button>
-          </div>
-        </Col>
+      </Row>
+      <Row>
+        <Col md={12}>1</Col>
       </Row>
     </Layout>
   );

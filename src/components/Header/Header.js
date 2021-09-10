@@ -5,7 +5,7 @@ import "./styles.scss";
 
 const Header = () => {
   return (
-    <header>
+    <header id="header">
       <Navbar expand="lg" variant="dark" className="mb-2">
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -14,7 +14,7 @@ const Header = () => {
             <NavLink exact className="nav-link" to="/">
               Dashboard
             </NavLink>
-            <NavLink exact className="nav-link" to="/parametrizacao">
+            <NavLink exact to="/parametrizacao">
               Régua de Cobrança
             </NavLink>
           </Nav>

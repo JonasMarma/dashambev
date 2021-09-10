@@ -1,4 +1,8 @@
 @import "../../design-tokens/variables.scss";
+#header {
+header {
+  background-color: var(--color-header);
+}
 
 nav {
   background-color: var(--color-header);
@@ -13,4 +17,5 @@ nav {
 
 .nav-link.active {
   font-weight: bold;
+}
 }
