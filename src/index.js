@@ -1,10 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import Home from "./pages/Home";
+
+import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
+import { Parametrizacao } from "./pages/Parametrizacao/index";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <BrowserRouter>
+    <Switch>
+      <Route path="/parametrizacao" component={withRouter(Parametrizacao)} />
+      <Route path="/" component={withRouter(Home)} />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
 );

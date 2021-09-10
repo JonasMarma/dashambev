@@ -1,34 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 am4core.useTheme(am4themes_animated);
 
 class GraficoTabulacoes extends Component {
-
   componentDidMount() {
-
     this.chart = am4core.create("chartdiv", am4charts.PieChart);
-    
+
     // Dados
-    this.chart.data = [{
-      "categoria": "Tabulados",
-      "quantidade": 626
-    }, {
-      "categoria": "Acionados",
-      "quantidade": 355
-    }];
+    this.chart.data = [
+      {
+        categoria: "Tabulados",
+        quantidade: 626,
+      },
+      {
+        categoria: "Acionados",
+        quantidade: 355,
+      },
+    ];
 
     // Adicionar dados e configurar
     var pieSeries = this.chart.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "quantidade";
     pieSeries.dataFields.category = "categoria";
-
   }
 
   componentWillUnmount() {
@@ -38,9 +37,7 @@ class GraficoTabulacoes extends Component {
   }
 
   render() {
-    return (
-        <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
-    );
+    return <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>;
   }
 }
 
