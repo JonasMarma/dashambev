@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { ReactComponent as LogoSVG } from "../../assets/img/logo.svg";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./styles.scss";
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
             <NavLink exact className="nav-link" to="/">
               Dashboard
             </NavLink>
-            <NavLink exact to="/parametrizacao">
+            <NavLink exact className="nav-link" to="/parametrizacao">
               Régua de Cobrança
             </NavLink>
             <NavLink exact to="/envio">
