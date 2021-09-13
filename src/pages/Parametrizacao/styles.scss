@@ -1,4 +1,25 @@
-input[type="date"] {
+//input[type="date"] {
+//}
+
+$corLetra: #9999994D;
+$corBox: #00448C0D;
+
+.caixa {
+  background-color: $corBox;
+  border-style: none;
+  color: $corLetra;
+}
+
+.button {
+  background-color: #00448C;
+  color: #FFFFFF;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-align: center;
+
 }
 
 .param-input-group {
@@ -6,4 +27,33 @@ input[type="date"] {
   flex-direction: column;
   justify-content: space-around;
   font-size: 0.9em;
+  background-color: red;
+}
+
+.thead {
+  background-color: #00448C08;
+
+  th {
+    padding-left: 60px;
+    padding-right: 60px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 30px;
+    align-items: center;
+  }
+}
+
+.tbody {
+  
+  td {
+    padding-left: 60px;
+    padding-right: 60px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 35px;
+
+    color: #333333;
+  }
 }

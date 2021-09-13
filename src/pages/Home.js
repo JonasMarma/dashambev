@@ -150,11 +150,12 @@ class Home extends Component {
 
     var series = this.barrasCarteira.series.push(new am4charts.LineSeries());
     //series.name = "Quantidade";
-    series.dataItems.template.tooltipText =
-      "Produto: {categoryX}\nQuantidade: {valueY}";
+    series.dataItems.template.tooltipText = "Produto: {categoryX}\nQuantidade: {valueY}";
     series.dataItems.template.fill = am4core.color("#9A2168"); // fill
     series.dataFields.valueY = "qtd";
     series.dataFields.categoryX = "hora";
+    series.propertyFields.fill = "color";
+    series.fillOpacity = 1;
 
     // PIZZA TABULADOS //////////////////////////////////////////////////////////////
     this.pizzaTabulados = am4core.create("pizzaTab", am4charts.PieChart);
@@ -163,12 +164,12 @@ class Home extends Component {
     this.pizzaTabulados.data = [
       {
         categoria: "Tabulados",
-        quantidade: 626,
+        quantidade: 300,
         color: am4core.color("#00354E"),
       },
       {
         categoria: "Acionados",
-        quantidade: 355,
+        quantidade: 300,
         color: am4core.color("#1A7C24"),
       },
     ];
@@ -179,8 +180,14 @@ class Home extends Component {
     pieSeries.dataFields.category = "categoria";
 
     // Estilização do gŕafico
-    this.pizzaTabulados.innerRadius = am4core.percent(40);
+    this.pizzaTabulados.innerRadius = am4core.percent(30);
     pieSeries.slices.template.propertyFields.fill = "color";
+
+    // Workarounds para tentar fazer caber tudo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    this.pizzaTabulados.radius = am4core.percent(70);
+    pieSeries.labels.template.text = "{category}";
+    pieSeries.labels.template.fontSize = 11;
+    pieSeries.alignLabels = false;
 
     // PIZZA AGENTES ///////////////////////////////////////////////////////////////
     this.pizzaAgentes = am4core.create("pizzaAgentes", am4charts.PieChart);
@@ -226,7 +233,7 @@ class Home extends Component {
       },
       {
         country: "Prod4",
-        litres: 33,
+        litres: 150,
       },
       {
         country: "Prod5",
