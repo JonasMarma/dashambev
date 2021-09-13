@@ -22,24 +22,6 @@ export const Envio = () => {
         <h1>Parametrização de régua de cobrança</h1>
       </Row>
       <Row className="mb-4 mt-2">
-        <Col md={1} className="param-input-group">
-          <Row>
-            <Form.Check
-              label="Envio SMS"
-              value="sms"
-              name="sendType"
-              type="radio"
-            />
-          </Row>
-          <Row>
-            <Form.Check
-              label="Envio Email"
-              value="email"
-              name="sendType"
-              type="radio"
-            />
-          </Row>
-        </Col>
         <Col md={11} className="d-flex justify-content-between">
           <Col style={{ marginRight: "10px" }}>
             <p style={{ margin: "0", fontWeight: "bold" }}>Faixa de atraso</p>
