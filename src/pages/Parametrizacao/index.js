@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Form, InputGroup, Row, Table } from "react-bootstrap";
+import { Button, Col, Form, Row, Table } from "react-bootstrap";
 import Select from "react-select";
 import Layout from "../../components/Layout";
 import "./styles.scss";
