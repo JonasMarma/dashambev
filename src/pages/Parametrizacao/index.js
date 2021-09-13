@@ -114,6 +114,7 @@ export const Parametrizacao = () => {
       <Row>
         <h1>Parametrização de régua de cobrança</h1>
       </Row>
+
       <Row className="mb-4 mt-2">
         <Col md={1} className="param-input-group mr-4">
           <Row>
@@ -139,11 +140,11 @@ export const Parametrizacao = () => {
             <div className="d-flex justify-content-between">
               <div style={{ marginRight: "10px" }}>
                 <p style={{ margin: "0" }}>Data Início</p>
-                <Form.Control type="date" name="date-begin" className="mr-1" />
+                <Form.Control type="date" name="date-begin" className="caixa mr-1" />
               </div>
               <div>
                 <p style={{ margin: "0" }}>Data Final</p>
-                <Form.Control type="date" name="date-end" />
+                <Form.Control type="date" name="date-end" className="caixa" />
               </div>
             </div>
           </Col>
@@ -155,7 +156,7 @@ export const Parametrizacao = () => {
           >
             <p style={{ margin: "0", fontWeight: "bold" }}>Produto</p>
             <div>
-              <Select options={productList} />
+              <Select className="caixa" options={productList} />
             </div>
           </Col>
 
@@ -171,7 +172,7 @@ export const Parametrizacao = () => {
             </span>
 
             <div>
-              <Form.Control type="date" name="date-direc" className="mr-1" />
+              <Form.Control type="date" name="date-direc" className="caixa mr-1" />
             </div>
           </Col>
           <Col
@@ -201,11 +202,12 @@ export const Parametrizacao = () => {
                 alignSelf: "self-end",
               }}
             >
-              <Button> Buscar </Button>
+              <Button className="button"> Buscar </Button>
             </div>
           </Col>
         </Col>
       </Row>
+      
       <Row>
         <Col md={12}>
           <Table bordered hover size="sm">
@@ -236,6 +238,7 @@ export const Parametrizacao = () => {
           </Table>
         </Col>
       </Row>
+
     </Layout>
   );
 };

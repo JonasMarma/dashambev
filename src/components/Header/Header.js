@@ -17,6 +17,9 @@ const Header = () => {
             <NavLink exact className="nav-link" to="/parametrizacao">
               Régua de Cobrança
             </NavLink>
+            <NavLink exact to="/envio">
+              Envios por dia
+            </NavLink>
           </Nav>
           <LogoSVG />
         </Container>
