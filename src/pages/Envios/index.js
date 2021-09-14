@@ -11,6 +11,7 @@ import TabelaParam from "../../components/TabelaParam";
 
 export const Envio = () => {
   const [param, setParam] = useState([]);
+
   const paramNameList = [
     { value: "param1", label: "Param1" },
     { value: "param2", label: "Param2" },
@@ -46,8 +47,8 @@ export const Envio = () => {
 
   const handleParam = (value) => {
     setParam(value);
-    console.log(value);
   };
+
   return (
     <Layout>
       <Row>

@@ -168,12 +168,12 @@ class Home extends Component {
       {
         categoria: "Tabulados",
         quantidade: 300,
-        color: am4core.color("#00354E"),
+        color: am4core.color("#21409a"),
       },
       {
         categoria: "Acionados",
         quantidade: 300,
-        color: am4core.color("#1A7C24"),
+        color: am4core.color("#8CD9F3"),
       },
     ];
 
@@ -204,12 +204,12 @@ class Home extends Component {
       {
         categoria: "Logados",
         quantidade: 300,
-        color: am4core.color("#00354E"),
+        color: am4core.color("#8CD9F3"),
       },
       {
         categoria: "Faltantes",
         quantidade: 35,
-        color: am4core.color("#CE4F4F"),
+        color: am4core.color("#21409a"),
       },
     ];
 

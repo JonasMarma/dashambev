@@ -13,7 +13,7 @@ function AmBarChart({ data, chartDiv }) {
     let chart = am4core.create(chartDiv, am4charts.XYChart);
     // chart.exporting.menu = new am4core.ExportMenu();
     chart.logo.disabled = true; // TODO: TIRAR QUANDO FOR PARA PRODUÇÃO //
-    chart.colors.list = [am4core.color("#f8971d")];
+    chart.colors.list = [am4core.color("#9db4f7")];
     chart.legend = new am4charts.Legend();
     chart.legend.position = "top"; // Posiciona na direita
     chart.legend.fontSize = 12; // Tamanho da fonte
@@ -50,7 +50,7 @@ function AmBarChart({ data, chartDiv }) {
     columnSeries.tooltip.label.textAlign = "middle";
 
     let valueLabel = columnSeries.columns.template.createChild(am4core.Label);
-    valueLabel.text = "[#fff]{valueY} Envios[/]";
+    valueLabel.text = "[bold][#333]{valueY} Envios[/]";
     valueLabel.fontSize = 14;
     valueLabel.valign = "bottom";
     valueLabel.dy = -10;

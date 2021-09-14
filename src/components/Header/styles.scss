@@ -1,21 +1,21 @@
 @import "../../design-tokens/variables.scss";
 #header {
-header {
-  background-color: var(--color-header);
-}
-
-nav {
-  background-color: var(--color-header);
-  min-height: 60px;
-  a {
-    margin-right: 1rem;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: white;
+  header {
   }
-}
 
-.nav-link.active {
-  font-weight: bold;
-}
+  nav {
+    min-height: 60px;
+    background: var(--color-header);
+
+    a {
+      margin-right: 1rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .nav-link.active {
+    font-weight: bold;
+  }
 }

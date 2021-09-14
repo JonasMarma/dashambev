@@ -6,7 +6,7 @@ import "./styles.scss";
 const Header = () => {
   return (
     <header id="header">
-      <Navbar expand="lg" variant="dark" className="mb-2">
+      <Navbar expand="lg" className="mb-2">
         <Nav className="me-auto mx-4">
           <NavLink exact className="nav-link" to="/">
             Dashboard

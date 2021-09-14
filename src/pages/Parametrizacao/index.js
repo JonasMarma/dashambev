@@ -91,6 +91,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                 value="SMS"
                 name="sendType"
                 type="radio"
+                defaultChecked
                 onChange={(e) => setType(e.target.value)}
               />
             </Row>
