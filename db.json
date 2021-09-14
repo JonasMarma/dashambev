@@ -1,0 +1,67 @@
+{
+  "parametrizacoes": [
+    {
+      "id": 1,
+      "type": "SMS",
+      "paramName": "Param1",
+      "lateGap": "03",
+      "product": "AB608293",
+      "directDate": "24/09/2021",
+      "uf": "SP"
+    },
+    {
+      "id": 2,
+      "type": "E-mail",
+      "paramName": "Param2",
+      "lateGap": "01",
+      "product": "AB608514",
+      "directDate": "21/09/2021",
+      "uf": "BA"
+    },
+    {
+      "id": 3,
+      "type": "SMS",
+      "paramName": "Param3",
+      "lateGap": "20",
+      "product": "AB603893",
+      "directDate": "24/09/2021",
+      "uf": "SP"
+    },
+    {
+      "id": 4,
+      "type": "E-mail",
+      "paramName": "Param4",
+      "lateGap": "20",
+      "product": "AB608514",
+      "directDate": "24/09/2021",
+      "uf": "PA"
+    },
+    {
+      "id": 5,
+      "type": "E-mail",
+      "paramName": "Param5",
+      "lateGap": "365",
+      "product": "AB608292",
+      "directDate": "12/09/2021",
+      "uf": "AM"
+    },
+    {
+      "type": "",
+      "paramName": "teste",
+      "lateGap": "23",
+      "prod": "prod",
+      "direc": "direc",
+      "uf": "uf",
+      "id": 6
+    },
+    {
+      "type": "email",
+      "paramName": "teste2",
+      "lateGap": "22",
+      "prod": "prod",
+      "direc": "direc",
+      "uf": "uf",
+      "id": 7
+    }
+  ]
+}

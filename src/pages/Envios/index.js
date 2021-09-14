@@ -5,6 +5,10 @@ import Layout from "../../components/Layout";
 import AmBarChart from "./amBarChart";
 import "./styles.scss";
 
+import { useState } from "react";
+
+import TabelaParam from "../../components/TabelaParam";
+
 export const Envio = () => {
   const paramNameList = [
     { value: "param1", label: "Param1" },
@@ -36,6 +40,17 @@ export const Envio = () => {
       day: "06/09/2021",
       sentPerDay: 95000,
     },
+  ];
+
+  const ufList = [
+    { value: "SP", label: "SP" },
+    { value: "BA", label: "BA" },
+    { value: "PA", label: "PA" },
+    { value: "AM", label: "AM" },
+    { value: "RR", label: "RR" },
+    { value: "RO", label: "RO" },
+    { value: "MG", label: "MG" },
+    { value: "RJ", label: "RJ" },
   ];
 
   return (
