@@ -13,7 +13,7 @@ function AmBarChart({ data, chartDiv }) {
     let chart = am4core.create(chartDiv, am4charts.XYChart);
     // chart.exporting.menu = new am4core.ExportMenu();
     chart.logo.disabled = true; // TODO: TIRAR QUANDO FOR PARA PRODUÇÃO //
-
+    chart.colors.list = [am4core.color("#f8971d")];
     chart.legend = new am4charts.Legend();
     chart.legend.position = "top"; // Posiciona na direita
     chart.legend.fontSize = 12; // Tamanho da fonte

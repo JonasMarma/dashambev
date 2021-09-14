@@ -55,16 +55,16 @@ export const Parametrizacao = ({ rows, onAdd }) => {
     }
     */
 
-    onAdd({ type, paramName, lateGap, product, directDate, uf })
+    onAdd({ type, paramName, lateGap, product, directDate, uf });
 
     // Resetar campos
-    setType("SMS")
-    setParamName("")
-    setLateGap("")
-    setProduct([])
-    setDirectDate("")
-    setUf("")
-  }
+    setType("SMS");
+    setParamName("");
+    setLateGap("");
+    setProduct([]);
+    setDirectDate("");
+    setUf("");
+  };
 
   const handleProduct = (options) => {
     setProduct(options);
@@ -79,7 +79,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
   return (
     <Layout id="param">
       <Row>
-        <h1>Parametrização de régua de cobrança</h1>
+        <h3>Parametrização de régua de cobrança</h3>
       </Row>
 
       <Form onSubmit={onSubmit}>

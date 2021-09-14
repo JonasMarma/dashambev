@@ -89,6 +89,7 @@ class Home extends Component {
     this.barrasCarteira = am4core.create("xyValores", am4charts.XYChart);
     this.barrasCarteira.logo.disabled = true;
 
+    this.barrasCarteira.colors.list = [am4core.color("#bac9f5")];
     this.barrasCarteira.data = [
       {
         hora: 7,
@@ -151,8 +152,9 @@ class Home extends Component {
 
     var series = this.barrasCarteira.series.push(new am4charts.LineSeries());
     //series.name = "Quantidade";
-    series.dataItems.template.tooltipText = "Produto: {categoryX}\nQuantidade: {valueY}";
-    series.dataItems.template.fill = am4core.color("#9A2168"); // fill
+    series.dataItems.template.tooltipText =
+      "Produto: {categoryX}\nQuantidade: {valueY}";
+
     series.dataFields.valueY = "qtd";
     series.dataFields.categoryX = "hora";
     series.propertyFields.fill = "color";
@@ -161,8 +163,6 @@ class Home extends Component {
     // PIZZA TABULADOS //////////////////////////////////////////////////////////////
     this.pizzaTabulados = am4core.create("pizzaTab", am4charts.PieChart);
     this.pizzaTabulados.logo.disabled = true;
-
-
     // Dados
     this.pizzaTabulados.data = [
       {
@@ -186,11 +186,14 @@ class Home extends Component {
     this.pizzaTabulados.innerRadius = am4core.percent(30);
     pieSeries.slices.template.propertyFields.fill = "color";
 
+    // Add a legend
+    this.pizzaTabulados.legend = new am4charts.Legend();
+    this.pizzaTabulados.legend.position = "right";
+    this.pizzaTabulados.legend.fontSize = "12px";
+
     // Workarounds para tentar fazer caber tudo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     this.pizzaTabulados.radius = am4core.percent(70);
-    pieSeries.labels.template.text = "{category}";
-    pieSeries.labels.template.fontSize = 11;
-    pieSeries.alignLabels = false;
+    pieSeries.labels.template.disabled = true;
 
     // PIZZA AGENTES ///////////////////////////////////////////////////////////////
     this.pizzaAgentes = am4core.create("pizzaAgentes", am4charts.PieChart);
@@ -217,11 +220,25 @@ class Home extends Component {
 
     // Estilização do gŕafico
     this.pizzaAgentes.innerRadius = am4core.percent(40);
+    pieSeries.labels.template.disabled = true;
     pieSeries.slices.template.propertyFields.fill = "color";
+
+    // Add a legend
+    this.pizzaAgentes.legend = new am4charts.Legend();
+    this.pizzaAgentes.legend.position = "right";
+    this.pizzaAgentes.legend.fontSize = "12px";
 
     // BARRAS CARTEIRA /////////////////////////////////////////////////////////////////
     this.barrasCarteira = am4core.create("barrasCarteira", am4charts.XYChart);
     this.barrasCarteira.logo.disabled = true;
+    this.barrasCarteira.colors.list = [
+      am4core.color("#845EC2"),
+      am4core.color("#D65DB1"),
+      am4core.color("#FF6F91"),
+      am4core.color("#FF9671"),
+      am4core.color("#FFC75F"),
+      am4core.color("#F9F871"),
+    ];
 
     this.barrasCarteira.data = [
       {
@@ -268,10 +285,14 @@ class Home extends Component {
     //valueAxis.title.text = "Litres sold (M)";
 
     var series = this.barrasCarteira.series.push(new am4charts.ColumnSeries());
+    this.barrasCarteira.colors.list = [am4core.color("#bac9f5")];
+
     //series.name = "Quantidade";
     series.columns.template.tooltipText =
       "Produto: {categoryX}\nQuantidade: {valueY}";
-    series.columns.template.fill = am4core.color("#9A2168"); // fill
+    series.columns.template.fill = am4core.color("#bac9f5"); // fill
+    series.columns.template.stroke = am4core.color("#bac9f5"); // fill
+
     series.dataFields.valueY = "litres";
     series.dataFields.categoryX = "country";
   }
@@ -289,7 +310,7 @@ class Home extends Component {
     return (
       <Layout>
         <Row>
-          <h1>Dashboard</h1>
+          <h3>Dashboard</h3>
         </Row>
 
         <Row className="mb-4">

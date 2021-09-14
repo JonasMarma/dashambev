@@ -51,7 +51,7 @@ export const Envio = () => {
   return (
     <Layout>
       <Row>
-        <h1>Envios por dia</h1>
+        <h3>Envios por dia</h3>
       </Row>
       <Row className="mb-4 mt-2">
         <p style={{ margin: "0", fontWeight: "bold" }}>Parâmetros criados</p>
