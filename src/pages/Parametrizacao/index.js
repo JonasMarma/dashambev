@@ -6,31 +6,30 @@ import {
   Form,
   FormControl,
   InputGroup,
-  Row
+  Row,
 } from "react-bootstrap";
 import Select from "react-select";
 import Layout from "../../components/Layout";
 import TabelaParam from "../../components/TabelaParam";
 import "./styles.scss";
 
-
 export const Parametrizacao = ({ rows, onAdd }) => {
   const [type, setType] = useState("");
   const [paramName, setParamName] = useState("");
   const [lateGap, setLateGap] = useState("");
-  const [product, setProduct] = useState("");
+  const [product, setProduct] = useState([]);
   const [directDate, setDirectDate] = useState("");
   const [uf, setUf] = useState("");
 
   const productList = [
-    { value: "prod1", label: "AB608293" },
-    { value: "prod2", label: "AB608514" },
-    { value: "prod3", label: "AB603893" },
-    { value: "prod4", label: "AB608292" },
-    { value: "prod5", label: "AB238293" },
-    { value: "prod6", label: "AB238200" },
-    { value: "prod3", label: "AB238299" },
-    { value: "prod3", label: "AB238291" },
+    { value: "prod1", label: "Produto 1" },
+    { value: "prod2", label: "Produto 2" },
+    { value: "prod3", label: "Produto 3" },
+    { value: "prod4", label: "Produto 4" },
+    { value: "prod5", label: "Produto 5" },
+    { value: "prod6", label: "Produto 6" },
+    { value: "prod7", label: "Produto 7" },
+    { value: "prod8", label: "Produto 8" },
   ];
 
   const ufList = [
@@ -45,7 +44,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
   ];
 
   const onSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     /*
     if (!text) {
@@ -54,15 +53,20 @@ export const Parametrizacao = ({ rows, onAdd }) => {
     }
     */
     // Não consegui pegar do form!
-    const prod = "prod"
-    const direc = "direc"
-    const uf = "uf"
-    onAdd({ type, paramName, lateGap, prod, direc, uf })
+    const prod = "prod";
+    const direc = "direc";
+    const uf = "uf";
+    onAdd({ type, paramName, lateGap, prod, direc, uf });
 
     //setText('')
     //setDay('')
     //setReminder(false)
-  }
+  };
+
+  const handleProduct = (value) => {
+    setProduct(value);
+    console.log(product);
+  };
 
   return (
     <Layout id="param">
@@ -73,14 +77,13 @@ export const Parametrizacao = ({ rows, onAdd }) => {
       <Form onSubmit={onSubmit}>
         <Row className="mb-4 mt-2">
           <Col md={1} className="param-input-group mr-4 pl-2">
-          
             <Row>
               <Form.Check
                 label="Envio SMS"
                 value="sms"
                 name="sendType"
                 type="radio"
-                onChange={(e) => setType(e.target.value)}
+                onChange={(e) => setType(e.currentTarget.value)}
                 checked={true}
               />
             </Row>
@@ -93,11 +96,12 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                 onChange={(e) => setType(e.target.value)}
               />
             </Row>
-
           </Col>
           <Col md={11} className="d-flex justify-content-between">
             <Col style={{ marginRight: "10px", maxWidth: "500px" }}>
-              <p style={{ margin: "0", fontWeight: "bold" }}>Nome do Parâmetro</p>
+              <p style={{ margin: "0", fontWeight: "bold" }}>
+                Nome do Parâmetro
+              </p>
               <div style={{ marginRight: "10px" }}>
                 <InputGroup>
                   <FormControl
@@ -142,9 +146,10 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                   options={productList}
                   value={product}
                   placeholder={<div>Selecione</div>}
-                  onChange={(e) => {
-                    setProduct(e.target.value)
-                  }}
+                  // onChange={(e) => {
+                  //   setProduct(e.target.value);
+                  // }}
+                  onChange={handleProduct}
                 />
               </div>
             </Col>
@@ -202,7 +207,10 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                   alignSelf: "self-end",
                 }}
               >
-                <Button className="button" type="submit"> Salvar </Button>
+                <Button className="button" type="submit">
+                  {" "}
+                  Salvar{" "}
+                </Button>
               </div>
             </Col>
           </Col>
