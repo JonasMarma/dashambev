@@ -41,9 +41,9 @@ const App = () => {
             }
         )
 
-        // Atualizar no front
-        const data = res.json()
-        setRows([...rows, data])
+        // Obter os dados novamente
+        const rowsServer = await fetchRows()
+        setRows(rowsServer)
     }
 
     return (

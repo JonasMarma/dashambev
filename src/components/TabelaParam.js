@@ -25,9 +25,9 @@ const TabelaParam = ({ rows }) => {
                 <td>
                   {row.lateGap} {row.lateGap === "01" ? "dia" : "dias"}
                 </td>
-                <td>{row.product}</td>
+                <td>{row.product.label}</td>
                 <td>{row.directDate}</td>
-                <td>{row.uf}</td>
+                <td>{row.uf.label}</td>
               </tr>
             );
           })}

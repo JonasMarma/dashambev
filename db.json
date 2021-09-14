@@ -1,67 +1,136 @@
 {
   "parametrizacoes": [
     {
-      "id": 1,
       "type": "SMS",
-      "paramName": "Param1",
-      "lateGap": "03",
-      "product": "AB608293",
-      "directDate": "24/09/2021",
-      "uf": "SP"
+      "paramName": "teste 1",
+      "lateGap": "15",
+      "product": {
+        "value": "prod4",
+        "label": "AB608292"
+      },
+      "direc": "direc",
+      "uf": "uf",
+      "id": 1
     },
     {
-      "id": 2,
       "type": "E-mail",
-      "paramName": "Param2",
-      "lateGap": "01",
-      "product": "AB608514",
-      "directDate": "21/09/2021",
-      "uf": "BA"
-    },
-    {
-      "id": 3,
-      "type": "SMS",
-      "paramName": "Param3",
-      "lateGap": "20",
-      "product": "AB603893",
-      "directDate": "24/09/2021",
-      "uf": "SP"
-    },
-    {
-      "id": 4,
-      "type": "E-mail",
-      "paramName": "Param4",
-      "lateGap": "20",
-      "product": "AB608514",
-      "directDate": "24/09/2021",
-      "uf": "PA"
-    },
-    {
-      "id": 5,
-      "type": "E-mail",
-      "paramName": "Param5",
-      "lateGap": "365",
-      "product": "AB608292",
-      "directDate": "12/09/2021",
-      "uf": "AM"
+      "paramName": "teste2",
+      "lateGap": "22",
+      "product": {
+        "value": "prod6",
+        "label": "AB238200"
+      },
+      "direc": "direc",
+      "uf": "uf",
+      "id": 2
     },
     {
       "type": "",
-      "paramName": "teste",
-      "lateGap": "23",
-      "prod": "prod",
+      "paramName": "teste3",
+      "lateGap": "85",
+      "product": {
+        "value": "prod1",
+        "label": "AB608293"
+      },
       "direc": "direc",
+      "uf": "uf",
+      "id": 3
+    },
+    {
+      "type": "E-mail",
+      "paramName": "teste8",
+      "lateGap": "8",
+      "product": {
+        "value": "prod7",
+        "label": "AB238299"
+      },
+      "direc": "direc",
+      "uf": "uf",
+      "id": 4
+    },
+    {
+      "type": "E-mail",
+      "paramName": "teste data",
+      "lateGap": "74",
+      "product": {
+        "value": "prod6",
+        "label": "AB238200"
+      },
+      "direc": "direc",
+      "uf": "uf",
+      "id": 5
+    },
+    {
+      "type": "E-mail",
+      "paramName": "teste data2",
+      "lateGap": "79",
+      "product": {
+        "value": "prod6",
+        "label": "AB238200"
+      },
+      "directDate": "2021-08-31",
       "uf": "uf",
       "id": 6
     },
     {
-      "type": "email",
-      "paramName": "teste2",
-      "lateGap": "22",
-      "prod": "prod",
-      "direc": "direc",
-      "uf": "uf",
+      "type": "E-mail",
+      "paramName": "Teste UF",
+      "lateGap": "85",
+      "product": {
+        "value": "prod7",
+        "label": "AB238299"
+      },
+      "directDate": "2021-09-30",
+      "uf": {
+        "value": "RO",
+        "label": "RO"
+      },
       "id": 7
+    },
+    {
+      "type": "SMS",
+      "paramName": "testeRESET",
+      "lateGap": "22",
+      "product": {
+        "value": "prod4",
+        "label": "AB608292"
+      },
+      "directDate": "2021-09-21",
+      "uf": {
+        "value": "RR",
+        "label": "RR"
+      },
+      "id": 8
+    },
+    {
+      "type": "E-mail",
+      "paramName": "testeRESET2",
+      "lateGap": "85",
+      "product": {
+        "value": "prod5",
+        "label": "AB238293"
+      },
+      "directDate": "2021-09-27",
+      "uf": {
+        "value": "AM",
+        "label": "AM"
+      },
+      "id": 9
+    },
+    {
+      "type": "SMS",
+      "paramName": "testeResetFINAL",
+      "lateGap": "85",
+      "product": {
+        "value": "prod5",
+        "label": "AB238293"
+      },
+      "directDate": "2021-09-07",
+      "uf": {
+        "value": "RJ",
+        "label": "RJ"
+      },
+      "id": 10
     }
   ]
 }

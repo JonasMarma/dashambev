@@ -1,3 +1,4 @@
+import { SlicedChart } from "@amcharts/amcharts4/charts";
 import React, { useState, useEffect } from "react";
 
 import {
@@ -18,7 +19,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
   const [type, setType] = useState("");
   const [paramName, setParamName] = useState("");
   const [lateGap, setLateGap] = useState("");
-  const [product, setProduct] = useState("");
+  const [product, setProduct] = useState([]);
   const [directDate, setDirectDate] = useState("");
   const [uf, setUf] = useState("");
 
@@ -29,8 +30,8 @@ export const Parametrizacao = ({ rows, onAdd }) => {
     { value: "prod4", label: "AB608292" },
     { value: "prod5", label: "AB238293" },
     { value: "prod6", label: "AB238200" },
-    { value: "prod3", label: "AB238299" },
-    { value: "prod3", label: "AB238291" },
+    { value: "prod7", label: "AB238299" },
+    { value: "prod8", label: "AB238291" },
   ];
 
   const ufList = [
@@ -47,22 +48,34 @@ export const Parametrizacao = ({ rows, onAdd }) => {
   const onSubmit = (e) => {
     e.preventDefault()
 
+    // Validar
     /*
     if (!text) {
       alert('Please add a task')
       return
     }
     */
-    // Não consegui pegar do form!
-    const prod = "prod"
-    const direc = "direc"
-    const uf = "uf"
-    onAdd({ type, paramName, lateGap, prod, direc, uf })
 
-    //setText('')
-    //setDay('')
-    //setReminder(false)
+    onAdd({ type, paramName, lateGap, product, directDate, uf })
+
+    // Resetar campos
+    setType("SMS")
+    setParamName("")
+    setLateGap("")
+    setProduct([])
+    setDirectDate("")
+    setUf("")
   }
+
+  const handleProduct = (options) => {
+    setProduct(options);
+    console.log(product);
+  };
+
+  const handleUf = (options) => {
+    setUf(options);
+    console.log(product);
+  };
 
   return (
     <Layout id="param">
@@ -77,17 +90,16 @@ export const Parametrizacao = ({ rows, onAdd }) => {
             <Row>
               <Form.Check
                 label="Envio SMS"
-                value="sms"
+                value="SMS"
                 name="sendType"
                 type="radio"
                 onChange={(e) => setType(e.target.value)}
-                checked={true}
               />
             </Row>
             <Row>
               <Form.Check
                 label="Envio Email"
-                value="email"
+                value="E-mail"
                 name="sendType"
                 type="radio"
                 onChange={(e) => setType(e.target.value)}
@@ -142,9 +154,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                   options={productList}
                   value={product}
                   placeholder={<div>Selecione</div>}
-                  onChange={(e) => {
-                    setProduct(e.target.value)
-                  }}
+                  onChange={handleProduct}
                 />
               </div>
             </Col>
@@ -187,7 +197,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                   options={ufList}
                   placeholder={<div>Selecione</div>}
                   value={uf}
-                  onChange={(e) => setUf(e.target.value)}
+                  onChange={handleUf}
                 />
               </div>
             </Col>
