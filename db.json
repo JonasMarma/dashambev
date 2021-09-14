@@ -131,6 +131,21 @@
         "label": "RJ"
       },
       "id": 10
+    },
+    {
+      "type": "SMS",
+      "paramName": "teste 8",
+      "lateGap": "10",
+      "product": {
+        "value": "prod5",
+        "label": "AB238293"
+      },
+      "directDate": "2021-09-17",
+      "uf": {
+        "value": "RO",
+        "label": "RO"
+      },
+      "id": 11
     }
   ]
 }

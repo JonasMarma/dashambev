@@ -10,11 +10,13 @@ import { useState } from "react";
 import TabelaParam from "../../components/TabelaParam";
 
 export const Envio = () => {
+  const [param, setParam] = useState([]);
   const paramNameList = [
     { value: "param1", label: "Param1" },
     { value: "param2", label: "Param2" },
     { value: "param3", label: "Param3" },
   ];
+
   const dataChart = [
     {
       day: "01/09/2021",
@@ -42,17 +44,10 @@ export const Envio = () => {
     },
   ];
 
-  const ufList = [
-    { value: "SP", label: "SP" },
-    { value: "BA", label: "BA" },
-    { value: "PA", label: "PA" },
-    { value: "AM", label: "AM" },
-    { value: "RR", label: "RR" },
-    { value: "RO", label: "RO" },
-    { value: "MG", label: "MG" },
-    { value: "RJ", label: "RJ" },
-  ];
-
+  const handleParam = (value) => {
+    setParam(value);
+    console.log(value);
+  };
   return (
     <Layout>
       <Row>
@@ -67,13 +62,14 @@ export const Envio = () => {
         >
           <Select
             placeholder={<div>Selecione a regra criada</div>}
+            onChange={handleParam}
             options={paramNameList}
           />
         </div>
       </Row>
       <Row>
         <Col>
-          <Card className=" p-3">
+          <Card className=" p-3" style={{ height: "25em" }}>
             <header>
               <h5>Envios por dia</h5>
               <div>

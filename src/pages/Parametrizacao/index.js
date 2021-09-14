@@ -7,13 +7,12 @@ import {
   Form,
   FormControl,
   InputGroup,
-  Row
+  Row,
 } from "react-bootstrap";
 import Select from "react-select";
 import Layout from "../../components/Layout";
 import TabelaParam from "../../components/TabelaParam";
 import "./styles.scss";
-
 
 export const Parametrizacao = ({ rows, onAdd }) => {
   const [type, setType] = useState("");
@@ -46,7 +45,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
   ];
 
   const onSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // Validar
     /*
@@ -86,7 +85,6 @@ export const Parametrizacao = ({ rows, onAdd }) => {
       <Form onSubmit={onSubmit}>
         <Row className="mb-4 mt-2">
           <Col md={1} className="param-input-group mr-4 pl-2">
-          
             <Row>
               <Form.Check
                 label="Envio SMS"
@@ -105,11 +103,12 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                 onChange={(e) => setType(e.target.value)}
               />
             </Row>
-
           </Col>
           <Col md={11} className="d-flex justify-content-between">
             <Col style={{ marginRight: "10px", maxWidth: "500px" }}>
-              <p style={{ margin: "0", fontWeight: "bold" }}>Nome do Parâmetro</p>
+              <p style={{ margin: "0", fontWeight: "bold" }}>
+                Nome do Parâmetro
+              </p>
               <div style={{ marginRight: "10px" }}>
                 <InputGroup>
                   <FormControl
@@ -212,7 +211,10 @@ export const Parametrizacao = ({ rows, onAdd }) => {
                   alignSelf: "self-end",
                 }}
               >
-                <Button className="button" type="submit"> Salvar </Button>
+                <Button className="button" type="submit">
+                  {" "}
+                  Salvar{" "}
+                </Button>
               </div>
             </Col>
           </Col>

@@ -16,7 +16,7 @@ class Home extends Component {
   componentDidMount() {
     // ACORDOS //////////////////////////////////////////////////////////////////////
     this.barrasCarteira = am4core.create("xyAcordos", am4charts.XYChart);
-
+    this.barrasCarteira.logo.disabled = true;
     this.barrasCarteira.data = [
       {
         hora: 7,
@@ -87,6 +87,7 @@ class Home extends Component {
 
     // VALORES //////////////////////////////////////////////////////////////////////
     this.barrasCarteira = am4core.create("xyValores", am4charts.XYChart);
+    this.barrasCarteira.logo.disabled = true;
 
     this.barrasCarteira.data = [
       {
@@ -159,6 +160,8 @@ class Home extends Component {
 
     // PIZZA TABULADOS //////////////////////////////////////////////////////////////
     this.pizzaTabulados = am4core.create("pizzaTab", am4charts.PieChart);
+    this.pizzaTabulados.logo.disabled = true;
+
 
     // Dados
     this.pizzaTabulados.data = [
@@ -191,6 +194,7 @@ class Home extends Component {
 
     // PIZZA AGENTES ///////////////////////////////////////////////////////////////
     this.pizzaAgentes = am4core.create("pizzaAgentes", am4charts.PieChart);
+    this.pizzaAgentes.logo.disabled = true;
 
     // Dados
     this.pizzaAgentes.data = [
@@ -217,6 +221,7 @@ class Home extends Component {
 
     // BARRAS CARTEIRA /////////////////////////////////////////////////////////////////
     this.barrasCarteira = am4core.create("barrasCarteira", am4charts.XYChart);
+    this.barrasCarteira.logo.disabled = true;
 
     this.barrasCarteira.data = [
       {
