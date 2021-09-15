@@ -214,14 +214,17 @@ class Home extends Component {
     ];
 
     // Adicionar dados e configurar
-    var pieSeries = this.pizzaAgentes.series.push(new am4charts.PieSeries());
-    pieSeries.dataFields.value = "quantidade";
-    pieSeries.dataFields.category = "categoria";
+    var agentsPieChart = this.pizzaAgentes.series.push(
+      new am4charts.PieSeries()
+    );
+    agentsPieChart.dataFields.value = "quantidade";
+    agentsPieChart.dataFields.category = "categoria";
+    // 440
 
     // Estilização do gŕafico
     this.pizzaAgentes.innerRadius = am4core.percent(40);
-    pieSeries.labels.template.disabled = true;
-    pieSeries.slices.template.propertyFields.fill = "color";
+    agentsPieChart.labels.template.disabled = true;
+    agentsPieChart.slices.template.propertyFields.fill = "color";
 
     // Add a legend
     this.pizzaAgentes.legend = new am4charts.Legend();
