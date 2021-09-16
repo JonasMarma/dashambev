@@ -21,7 +21,7 @@ const App = () => {
 
     // Método para puxar as rows do servidor
     const fetchRows = async () => {
-        const res = await fetch('http://localhost:5000/parametrizacoes')
+        const res = await fetch('https://dash-ambev-server.herokuapp.com/parametrizacoes')
         const data = await res.json()
         
         return(data)
@@ -31,7 +31,7 @@ const App = () => {
     const addRow = async (row) => {
         // Enviar o POST
         const res = await fetch(
-            'http://localhost:5000/parametrizacoes',
+            'https://dash-ambev-server.herokuapp.com/parametrizacoes',
             {
                 method: 'POST',
                 headers: {
