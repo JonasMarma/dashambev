@@ -84,6 +84,8 @@ class Home extends Component {
     series.dataItems.template.fill = am4core.color("#9A2168"); // fill
     series.dataFields.valueY = "qtd";
     series.dataFields.categoryX = "hora";
+        series.propertyFields.fill = "color";
+    series.fillOpacity = 1;
 
     // VALORES //////////////////////////////////////////////////////////////////////
     this.barrasCarteira = am4core.create("xyValores", am4charts.XYChart);
@@ -145,13 +147,11 @@ class Home extends Component {
       new am4charts.CategoryAxis()
     );
     categoryAxis.dataFields.category = "hora";
-    //categoryAxis.title.text = "Produtos";
-
+    
     var valueAxis = this.barrasCarteira.yAxes.push(new am4charts.ValueAxis());
-    //valueAxis.title.text = "Litres sold (M)";
 
     var series = this.barrasCarteira.series.push(new am4charts.LineSeries());
-    //series.name = "Quantidade";
+
     series.dataItems.template.tooltipText =
       "Produto: {categoryX}\nQuantidade: {valueY}";
 
@@ -322,7 +322,7 @@ class Home extends Component {
               <header>
                 <h5>Quantidade de Acordos</h5>
                 <div>
-                  <p className="headerValue">869.600</p>
+                  <p className="headerValue">9.686</p>
                   <p className="headerValueLabel">Acordos Totais</p>
                 </div>
               </header>
@@ -335,7 +335,7 @@ class Home extends Component {
               <header>
                 <h5>Valor em Acordos</h5>
                 <div>
-                  <p className="headerValue">R$1.305.885.888.737</p>
+                  <p className="headerValue">R$305.885,00</p>
                   <p className="headerValueLabel">Valor em acordos</p>
                 </div>
               </header>

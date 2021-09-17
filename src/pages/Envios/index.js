@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Col, Form, InputGroup, Row } from "react-bootstrap";
 import Select from "react-select";
 import Layout from "../../components/Layout";
-import AmBarChart from "./amBarChart";
+import Grafico from "./Grafico"
 import "./styles.scss";
 
 import { useState } from "react";
@@ -12,13 +12,7 @@ import TabelaParam from "../../components/TabelaParam";
 export const Envio = () => {
   const [param, setParam] = useState([]);
 
-  const paramNameList = [
-    { value: "param1", label: "Param1" },
-    { value: "param2", label: "Param2" },
-    { value: "param3", label: "Param3" },
-  ];
-
-  const dataChart = [
+  const dataParam1 = [
     {
       day: "01/09/2021",
       sentPerDay: 65000,
@@ -45,8 +39,40 @@ export const Envio = () => {
     },
   ];
 
+  const dataParam2 = [
+    {
+      day: "01/09/2021",
+      sentPerDay: 65000,
+    },
+    {
+      day: "02/09/2021",
+      sentPerDay: 65000,
+    },
+    {
+      day: "03/09/2021",
+      sentPerDay: 65000,
+    },
+    {
+      day: "04/09/2021",
+      sentPerDay: 65000,
+    },
+    {
+      day: "05/09/2021",
+      sentPerDay: 65000,
+    },
+    {
+      day: "06/09/2021",
+      sentPerDay: 65000,
+    },
+  ];
+
+  const paramNameList = [
+    { value: dataParam1, label: "Param1" },
+    { value: dataParam2, label: "Param2" },
+  ];
+
   const handleParam = (value) => {
-    setParam(value);
+    setParam(value.value);
   };
 
   return (
@@ -70,16 +96,7 @@ export const Envio = () => {
       </Row>
       <Row>
         <Col>
-          <Card className=" p-3" style={{ height: "25em" }}>
-            <header>
-              <h5>Envios por dia</h5>
-              <div>
-                <p className="headerValue">523.000</p>
-                <p className="headerValueLabel">Envios totais</p>
-              </div>
-            </header>
-            <AmBarChart data={dataChart} chartDiv="sentPerDay" />
-          </Card>
+          <Grafico data={param} chartDiv="sentPerDay" />
         </Col>
       </Row>
     </Layout>
