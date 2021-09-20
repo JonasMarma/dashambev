@@ -14,7 +14,7 @@ import Layout from "../../components/Layout";
 import TabelaParam from "../../components/TabelaParam";
 import "./styles.scss";
 
-export const Parametrizacao = ({ rows, onAdd }) => {
+export const Parametrizacao = ({ rows, onAdd, onDelete }) => {
   const [type, setType] = useState("");
   const [paramName, setParamName] = useState("");
   const [lateGap, setLateGap] = useState("");
@@ -47,14 +47,6 @@ export const Parametrizacao = ({ rows, onAdd }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // Validar
-    /*
-    if (!text) {
-      alert('Please add a task')
-      return
-    }
-    */
-
     onAdd({ type, paramName, lateGap, product, directDate, uf });
 
     // Resetar campos
@@ -68,12 +60,14 @@ export const Parametrizacao = ({ rows, onAdd }) => {
 
   const handleProduct = (options) => {
     setProduct(options);
-    console.log(product);
   };
 
   const handleUf = (options) => {
     setUf(options);
-    console.log(product);
+  };
+
+  const deleteItem = (id) => {
+    onDelete({ id });
   };
 
   return (
@@ -84,28 +78,23 @@ export const Parametrizacao = ({ rows, onAdd }) => {
 
       <Form onSubmit={onSubmit}>
         <Row className="mb-4 mt-2">
-          <Col md={1} className="param-input-group mr-4 pl-2">
-            <Row>
-              <Form.Check
-                label="Envio SMS"
-                value="SMS"
-                name="sendType"
-                type="radio"
-                defaultChecked
-                onChange={(e) => setType(e.target.value)}
-              />
-            </Row>
-            <Row>
-              <Form.Check
-                label="Envio Email"
-                value="E-mail"
-                name="sendType"
-                type="radio"
-                onChange={(e) => setType(e.target.value)}
-              />
-            </Row>
+          <Col md={2} className="param-input-group mr-4 pl-2">
+            <Form.Check
+              label="Envio SMS"
+              value="SMS"
+              name="sendType"
+              type="radio"
+              onChange={(e) => setType(e.target.value)}
+            />
+            <Form.Check
+              label="Envio Email"
+              value="E-mail"
+              name="sendType"
+              type="radio"
+              onChange={(e) => setType(e.target.value)}
+            />
           </Col>
-          <Col md={11} className="d-flex justify-content-between">
+          <Col md={10} className="d-flex justify-content-between">
             <Col style={{ marginRight: "10px", maxWidth: "500px" }}>
               <p style={{ margin: "0", fontWeight: "bold" }}>
                 Nome do Parâmetro
@@ -224,7 +213,7 @@ export const Parametrizacao = ({ rows, onAdd }) => {
 
       <Row>
         <Col md={12}>
-          <TabelaParam rows={rows} />
+          <TabelaParam rows={rows} deleteItem={deleteItem} />
         </Col>
       </Row>
     </Layout>

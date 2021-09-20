@@ -6,8 +6,8 @@ import "./styles.scss";
 const Header = () => {
   return (
     <header id="header">
-      <Navbar expand="lg" className="mb-2">
-        <Nav className="me-auto mx-4">
+      <Navbar expand="lg" className="mb-2 mx-4">
+        <Nav className="me-auto ">
           <NavLink exact className="nav-link" to="/">
             Dashboard
           </NavLink>
@@ -16,6 +16,9 @@ const Header = () => {
           </NavLink>
           <NavLink exact className="nav-link" to="/envio">
             Envios por dia
+          </NavLink>
+          <NavLink exact className="nav-link" to="/funil">
+            Funil de Acionamento
           </NavLink>
         </Nav>
         <LogoSVG />

@@ -1,11 +1,9 @@
 @import "../../design-tokens/variables.scss";
 #header {
-  header {
-  }
+  background: var(--color-header);
 
   nav {
     min-height: 60px;
-    background: var(--color-header);
 
     a {
       margin-right: 1rem;

@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 
 import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
 import { Parametrizacao } from "./pages/Parametrizacao/index";
+import { Funil } from "./pages/Funil/index";
 import { Envio } from "./pages/Envios/index";
 
 import { useState, useEffect } from 'react'
@@ -46,6 +47,18 @@ const App = () => {
         setRows(rowsServer)
     }
 
+    // Método para deletar uma coluna
+    const deleteRow = async (id) => {
+        console.log(id.id);
+        await fetch(`https://dash-ambev-server.herokuapp.com/parametrizacoes/${id.id}`, {
+            method: 'DELETE',
+        })
+
+        // Obter os dados novamente
+        const rowsServer = await fetchRows()
+        setRows(rowsServer)
+    }
+
     return (
         <BrowserRouter>
             <Switch>
@@ -56,10 +69,12 @@ const App = () => {
                             <Parametrizacao
                               rows={rows}
                               onAdd = {addRow}
+                              onDelete = {deleteRow}
                             />
                         </>
                     )}
                 />
+                <Route path="/funil" component={withRouter(Funil)} />
                 <Route path="/envio" component={withRouter(Envio)} />
                 <Route path="/" component={withRouter(Home)} />
             </Switch>

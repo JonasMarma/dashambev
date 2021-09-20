@@ -11,15 +11,7 @@ function AmBarChart({ data, chartDiv }) {
 
   useLayoutEffect(() => {
     let chart = am4core.create(chartDiv, am4charts.XYChart);
-    // chart.exporting.menu = new am4core.ExportMenu();
     chart.logo.disabled = true; // TODO: TIRAR QUANDO FOR PARA PRODUÇÃO //
-    chart.colors.list = [am4core.color("#9db4f7")];
-    chart.legend = new am4charts.Legend();
-    chart.legend.position = "top"; // Posiciona na direita
-    chart.legend.fontSize = 12; // Tamanho da fonte
-    chart.legend.itemContainers.template.paddingTop = 0;
-    chart.legend.itemContainers.template.paddingBottom = 0;
-    chart.legend.labels.template.text = "[{color}]{name}[/]"; // Estiliza com a cor do gráfico
 
     /* Create axes */
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -43,9 +35,7 @@ function AmBarChart({ data, chartDiv }) {
     columnSeries.dataFields.valueY = "sentPerDay";
 
     columnSeries.dataFields.categoryX = "day";
-    columnSeries.hiddenInLegend = true; // Esconde "Aderência" da legenda.
 
-    //columnSeries.columns.template.tooltipText = "[#fff letter-spacing: 1px font-size: 14px]{name} às {categoryX}\n[#fff font-size: 14px]{valueY}[/] [#fff]{additional}%[/]"
     columnSeries.columns.template.strokeOpacity = 0;
     columnSeries.tooltip.label.textAlign = "middle";
 

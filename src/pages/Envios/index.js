@@ -15,60 +15,116 @@ export const Envio = () => {
   const dataParam1 = [
     {
       day: "01/09/2021",
-      sentPerDay: 65000,
+      sentPerDay: 74562,
     },
     {
       day: "02/09/2021",
-      sentPerDay: 92000,
+      sentPerDay: 65874,
     },
     {
       day: "03/09/2021",
-      sentPerDay: 88000,
+      sentPerDay: 88541,
     },
     {
       day: "04/09/2021",
-      sentPerDay: 93000,
+      sentPerDay: 32567,
     },
     {
       day: "05/09/2021",
-      sentPerDay: 90000,
+      sentPerDay: 74523,
     },
     {
       day: "06/09/2021",
-      sentPerDay: 95000,
+      sentPerDay: 95478,
     },
   ];
 
   const dataParam2 = [
     {
       day: "01/09/2021",
-      sentPerDay: 65000,
+      sentPerDay: 32156,
     },
     {
       day: "02/09/2021",
-      sentPerDay: 65000,
+      sentPerDay: 75412,
     },
     {
       day: "03/09/2021",
-      sentPerDay: 65000,
+      sentPerDay: 96581,
     },
     {
       day: "04/09/2021",
-      sentPerDay: 65000,
+      sentPerDay: 14785,
     },
     {
       day: "05/09/2021",
-      sentPerDay: 65000,
+      sentPerDay: 53253,
     },
     {
       day: "06/09/2021",
-      sentPerDay: 65000,
+      sentPerDay: 14756,
+    },
+  ];
+
+  const dataParam3 = [
+    {
+      day: "01/09/2021",
+      sentPerDay: 15632,
+    },
+    {
+      day: "02/09/2021",
+      sentPerDay: 45632,
+    },
+    {
+      day: "03/09/2021",
+      sentPerDay: 85241,
+    },
+    {
+      day: "04/09/2021",
+      sentPerDay: 74125,
+    },
+    {
+      day: "05/09/2021",
+      sentPerDay: 85263,
+    },
+    {
+      day: "06/09/2021",
+      sentPerDay: 96325,
+    },
+  ];
+
+  const dataParam4 = [
+    {
+      day: "01/09/2021",
+      sentPerDay: 85269,
+    },
+    {
+      day: "02/09/2021",
+      sentPerDay: 25874,
+    },
+    {
+      day: "03/09/2021",
+      sentPerDay: 74198,
+    },
+    {
+      day: "04/09/2021",
+      sentPerDay: 36547,
+    },
+    {
+      day: "05/09/2021",
+      sentPerDay: 75632,
+    },
+    {
+      day: "06/09/2021",
+      sentPerDay: 12547,
     },
   ];
 
   const paramNameList = [
-    { value: dataParam1, label: "Param1" },
-    { value: dataParam2, label: "Param2" },
+    { value: dataParam1, label: "Clientes entrantes" },
+    { value: dataParam2, label: "Lembrete de débito" },
+    { value: dataParam3, label: "Lembrete de vencimento de boleto" },
+    { value: dataParam4, label: "Quebra de acordo" },
   ];
 
   const handleParam = (value) => {

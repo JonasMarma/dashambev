@@ -71,21 +71,29 @@ class Home extends Component {
     var categoryAxis = this.barrasCarteira.xAxes.push(
       new am4charts.CategoryAxis()
     );
+    categoryAxis.renderer.minGridDistance = 20;
     categoryAxis.dataFields.category = "hora";
-    //categoryAxis.title.text = "Produtos";
+    categoryAxis.renderer.labels.template.adapter.add("text", function (text) {
+      return text + "h";
+    });
 
     var valueAxis = this.barrasCarteira.yAxes.push(new am4charts.ValueAxis());
-    //valueAxis.title.text = "Litres sold (M)";
 
     var series = this.barrasCarteira.series.push(new am4charts.LineSeries());
-    //series.name = "Quantidade";
-    series.dataItems.template.tooltipText =
-      "Produto: {categoryX}\nQuantidade: {valueY}";
+    series.smoothing = "monotoneX";
     series.dataItems.template.fill = am4core.color("#9A2168"); // fill
     series.dataFields.valueY = "qtd";
     series.dataFields.categoryX = "hora";
-        series.propertyFields.fill = "color";
+    series.propertyFields.fill = "color";
     series.fillOpacity = 1;
+
+    var circleBullet = series.bullets.push(new am4charts.CircleBullet());
+    circleBullet.circle.stroke = am4core.color("white");
+    circleBullet.circle.strokeOpacity = 0.5;
+    circleBullet.circle.strokeWidth = 2;
+    circleBullet.circle.radius = 6;
+    circleBullet.tooltipText =
+      "[bold] {categoryX} [/] horas \n  [bold] {valueY} [/]Acordos";
 
     // VALORES //////////////////////////////////////////////////////////////////////
     this.barrasCarteira = am4core.create("xyValores", am4charts.XYChart);
@@ -95,70 +103,85 @@ class Home extends Component {
     this.barrasCarteira.data = [
       {
         hora: 7,
-        qtd: 50,
+        qtd: 9000,
       },
       {
         hora: 8,
-        qtd: 510,
+        qtd: 5100,
       },
       {
         hora: 9,
-        qtd: 711,
+        qtd: 7011,
       },
       {
         hora: 10,
-        qtd: 233,
+        qtd: 2330,
       },
       {
         hora: 11,
-        qtd: 703,
+        qtd: 7030,
       },
       {
         hora: 12,
-        qtd: 750,
+        qtd: 7500,
       },
       {
         hora: 13,
-        qtd: 522,
+        qtd: 5202,
       },
       {
         hora: 14,
-        qtd: 572,
+        qtd: 5702,
       },
       {
         hora: 15,
-        qtd: 522,
+        qtd: 5022,
       },
       {
         hora: 16,
-        qtd: 300,
+        qtd: 3000,
       },
       {
         hora: 17,
-        qtd: 100,
+        qtd: 8600,
       },
       {
         hora: 18,
-        qtd: 52,
+        qtd: 5022,
       },
     ];
 
-    var categoryAxis = this.barrasCarteira.xAxes.push(
+    var categoryAxis1 = this.barrasCarteira.xAxes.push(
       new am4charts.CategoryAxis()
     );
-    categoryAxis.dataFields.category = "hora";
-    
-    var valueAxis = this.barrasCarteira.yAxes.push(new am4charts.ValueAxis());
+    categoryAxis1.renderer.minGridDistance = 10;
+    categoryAxis1.dataFields.category = "hora";
+    categoryAxis1.renderer.labels.template.adapter.add("text", function (text) {
+      return text + "h";
+    });
 
-    var series = this.barrasCarteira.series.push(new am4charts.LineSeries());
+    var valueAxis1 = this.barrasCarteira.yAxes.push(new am4charts.ValueAxis());
+    valueAxis1.min = 0;
+    valueAxis1.max = 10000;
 
-    series.dataItems.template.tooltipText =
-      "Produto: {categoryX}\nQuantidade: {valueY}";
+    var series1 = this.barrasCarteira.series.push(new am4charts.LineSeries());
+    series1.smoothing = "monotoneX";
 
-    series.dataFields.valueY = "qtd";
-    series.dataFields.categoryX = "hora";
-    series.propertyFields.fill = "color";
-    series.fillOpacity = 1;
+    var circleBullet1 = series1.bullets.push(new am4charts.CircleBullet());
+    circleBullet1.circle.stroke = am4core.color("black");
+    circleBullet1.circle.strokeOpacity = 0.5;
+    circleBullet1.circle.strokeWidth = 2;
+    circleBullet1.circle.radius = 6;
+
+    circleBullet1.tooltipText =
+      "[bold]Hora:[/] {categoryX} horas \n [bold]Valor: [/]R$ {valueY}";
+    series1.tooltipText =
+      "[bold]Hora:[/] {categoryX} \n [bold]Valor: [/]R$ {valueY}";
+
+    series1.dataFields.valueY = "qtd";
+    series1.dataFields.categoryX = "hora";
+    series1.propertyFields.fill = "color";
+    series1.fillOpacity = 1;
 
     // PIZZA TABULADOS //////////////////////////////////////////////////////////////
     this.pizzaTabulados = am4core.create("pizzaTab", am4charts.PieChart);
@@ -167,12 +190,12 @@ class Home extends Component {
     this.pizzaTabulados.data = [
       {
         categoria: "Tabulados",
-        quantidade: 300,
+        quantidade: 253,
         color: am4core.color("#21409a"),
       },
       {
         categoria: "Acionados",
-        quantidade: 300,
+        quantidade: 310,
         color: am4core.color("#8CD9F3"),
       },
     ];
@@ -245,35 +268,35 @@ class Home extends Component {
 
     this.barrasCarteira.data = [
       {
-        country: "Prod1",
+        country: "AB608293",
         litres: 950,
       },
       {
-        country: "Prod2",
+        country: "AB608514",
         litres: 510,
       },
       {
-        country: "Prod3",
+        country: "AB603893",
         litres: 711,
       },
       {
-        country: "Prod4",
+        country: "AB608292",
         litres: 150,
       },
       {
-        country: "Prod5",
+        country: "AB238293",
         litres: 703,
       },
       {
-        country: "Prod6",
+        country: "AB238200",
         litres: 750,
       },
       {
-        country: "Prod7",
+        country: "AB238299",
         litres: 522,
       },
       {
-        country: "Prod8",
+        country: "AB238291",
         litres: 572,
       },
     ];
@@ -282,15 +305,14 @@ class Home extends Component {
       new am4charts.CategoryAxis()
     );
     categoryAxis.dataFields.category = "country";
-    //categoryAxis.title.text = "Produtos";
+    categoryAxis.renderer.minGridDistance = 20;
+    categoryAxis.renderer.labels.template.fontSize = 13;
 
     var valueAxis = this.barrasCarteira.yAxes.push(new am4charts.ValueAxis());
-    //valueAxis.title.text = "Litres sold (M)";
 
     var series = this.barrasCarteira.series.push(new am4charts.ColumnSeries());
     this.barrasCarteira.colors.list = [am4core.color("#bac9f5")];
 
-    //series.name = "Quantidade";
     series.columns.template.tooltipText =
       "Produto: {categoryX}\nQuantidade: {valueY}";
     series.columns.template.fill = am4core.color("#bac9f5"); // fill
@@ -326,7 +348,7 @@ class Home extends Component {
                   <p className="headerValueLabel">Acordos Totais</p>
                 </div>
               </header>
-              <div id="xyAcordos"></div>
+              <div id="xyAcordos" style={{ height: "12em" }}></div>
             </Card>
           </Col>
 
@@ -339,7 +361,7 @@ class Home extends Component {
                   <p className="headerValueLabel">Valor em acordos</p>
                 </div>
               </header>
-              <div id="xyValores"></div>
+              <div id="xyValores" style={{ height: "12em" }}></div>
             </Card>
           </Col>
         </Row>
